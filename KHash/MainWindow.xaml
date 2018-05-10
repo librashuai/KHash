@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="#FF5A578B">
-    <Grid Background="WhiteSmoke" Margin="1">
+    <Grid x:Name="MainFrame" Background="WhiteSmoke" Margin="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="32"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -15,17 +15,30 @@
         <Grid.ColumnDefinitions>
             
         </Grid.ColumnDefinitions>
-        
-        <Grid Grid.Row="0">
+
+        <Grid x:Name="TitleBar" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="32"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="32"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button BorderThickness="0">· · ·</Button>
+            <Button x:Name="MenuBtn" BorderThickness="0" Click="MenuBtn_Click">· · ·</Button>
             <Label Grid.Column="1" Background="#FFDDDDDD" HorizontalContentAlignment="Center" MouseLeftButtonDown="WindowMove">Kevin's Hash Tool</Label>
-            <Button Grid.Column="2" BorderThickness="0">X</Button>
+            <Button x:Name="CloseBtn" Grid.Column="2" BorderThickness="0" Click="CloseBtn_Click">X</Button>
         </Grid>
+        <Grid x:Name="LeftMenu" Panel.ZIndex="1000" Grid.Row="1" Width="64" HorizontalAlignment="Left" Background="#FF7FC7F0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"></RowDefinition>
+                <RowDefinition Height="32"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="32"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="FileMenu" Grid.Row="0" BorderThickness="0" Click="FileMenu_Click">File</Button>
+            <Button x:Name="StringMenu" Grid.Row="1" BorderThickness="0" Click="StringMenu_Click">String</Button>
+            <Button Grid.Row="3" BorderThickness="0">Setting</Button>
+        </Grid>
+        <Grid x:Name="ContentContainer" Grid.Row="1"></Grid>
     </Grid>
 </Window>
