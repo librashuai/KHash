@@ -20,9 +20,19 @@ namespace KHash
     /// </summary>
     public partial class FileHashView : UserControl
     {
+        FileHashViewModel mViewModel;
+
         public FileHashView()
         {
             InitializeComponent();
+
+            mViewModel = new FileHashViewModel();
+            this.DataContext = mViewModel;
+        }
+
+        public void CalcHash()
+        {
+
         }
     }
 }

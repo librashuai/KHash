@@ -91,6 +91,8 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="FileHashViewModel.cs" />
+    <Compile Include="HashModel.cs" />
     <Compile Include="StringHashView.xaml.cs">
       <DependentUpon>StringHashView.xaml</DependentUpon>
     </Compile>
