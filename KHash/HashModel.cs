@@ -8,6 +8,13 @@ namespace KHash
 {
     class HashModel
     {
+        public string CalcFileHash(string filePath)
+        {
+            string result = "";
 
+
+
+            return result;
+        }
     }
 }

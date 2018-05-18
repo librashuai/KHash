@@ -30,7 +30,7 @@ namespace KHash
             this.DataContext = mViewModel;
         }
 
-        public void CalcHash()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

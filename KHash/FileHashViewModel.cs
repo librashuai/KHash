@@ -8,5 +8,11 @@ namespace KHash
 {
     class FileHashViewModel
     {
+        public string FilePath { get; set; }
+
+        public void CalcHash()
+        {
+
+        }
     }
 }
