@@ -20,9 +20,9 @@
             </Grid.ColumnDefinitions>
 
             <Label HorizontalAlignment="Left" VerticalAlignment="Center">File</Label>
-            <TextBox Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=FilePath}"/>
+            <TextBox x:Name="FilePath" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=FilePath}" PreviewDragEnter="FilePath_PreviewDragEnter" PreviewDragOver="FilePath_PreviewDragOver" Drop="FilePath_Drop"/>
             <Button Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">Calc</Button>
         </Grid>
-        <TextBox x:Name="Output" Grid.Row="1"></TextBox>
+        <TextBox x:Name="Result" Grid.Row="1" Text="{Binding Path=Result}"></TextBox>
     </Grid>
 </UserControl>
