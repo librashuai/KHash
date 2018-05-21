@@ -20,9 +20,17 @@ namespace KHash
     /// </summary>
     public partial class StringHashView : UserControl
     {
+        StringHashViewModel viewModel;
         public StringHashView()
         {
             InitializeComponent();
+            viewModel = new StringHashViewModel();
+            this.DataContext = viewModel;
+        }
+
+        private void Calc_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.Calc();
         }
     }
 }

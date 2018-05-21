@@ -96,6 +96,7 @@
     <Compile Include="StringHashView.xaml.cs">
       <DependentUpon>StringHashView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StringHashViewModel.cs" />
     <Page Include="FileHashView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

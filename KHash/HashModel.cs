@@ -27,11 +27,11 @@ namespace KHash
 
         public string CalcFileHash(string filePath)
         {
-            string result = $"MD5:{MD5Hex(filePath)}";
+            string result = $"MD5:{FileMD5Hex(filePath)}";
             return result;
         }
 
-        private string MD5Hex(string filePath)
+        private string FileMD5Hex(string filePath)
         {
             MD5 md5 = MD5.Create();
             using (FileStream stream = File.OpenRead(filePath))
@@ -39,6 +39,19 @@ namespace KHash
                 byte[] hash = md5.ComputeHash(stream);
                 return Byte2Hex(hash);
             }
+        }
+
+        public string CalcStringHash(string str)
+        {
+            string result = $"MD5:{StringMD5Hex(str)}";
+            return result;
+        }
+
+        private string StringMD5Hex(string str)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(str));
+            return Byte2Hex(hash);
         }
 
         private string Byte2Hex(byte[] src)
